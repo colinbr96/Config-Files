@@ -30,6 +30,7 @@ alias la="ls -a"
 alias ll="ls -lh"
 alias lla='ls -lah'
 
+alias rm="rm -i"
 alias cls="clear"
 alias fdiff="diff -rq"
 alias fif="find_in_folder"
