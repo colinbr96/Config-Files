@@ -9,16 +9,16 @@ fuzzy() { find . -name *"$1"*; }
 # COLORS
 
 C="\033[" # color escape sequence
-END="${C}m" # end of formatting
+END="\[${C}m\]" # end of formatting
 
-WHITE="${C}37m"
-CYAN="${C}36m"
-GREEN="${C}32m"
-YELLOW="${C}33m"
-RED="${C}31m"
+WHITE="\[${C}37m\]"
+CYAN="\[${C}36m\]"
+GREEN="\[${C}32m\]"
+YELLOW="\[${C}33m\]"
+RED="\[${C}31m\]"
 
-export PS1="${CYAN}\u${WHITE}@${GREEN}\h${WHITE}:${YELLOW}\W${WHITE}\$ ${END}" # normal
-# export PS1="${RED}\u${WHITE}@${RED}\h${WHITE}:${RED}\W${WHITE}\$ ${END}" # root
+export PS1="\\[${CYAN}\u${WHITE}@${GREEN}\h${WHITE}:${YELLOW}\W${WHITE}\$ ${END}" # normal
+# export PS1="\\[${RED}\u${WHITE}@${RED}\h${WHITE}:${RED}\W${WHITE}\$ ${END}" # root
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
@@ -37,6 +37,8 @@ alias fif="find_in_folder"
 alias gdiff='git diff --no-index'
 alias psg="ps aux | grep"
 alias sizeof="du -sh"
+alias sha256="shasum -a 256"
+alias f="find . -name"
 
 
 # MACOS-SPECIFIC ALIASES
