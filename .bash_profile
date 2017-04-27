@@ -39,6 +39,7 @@ alias psg="ps aux | grep"
 alias sizeof="du -sh"
 alias sha256="shasum -a 256"
 alias f="find . -name"
+alias tree="tree -AC"
 
 
 # MACOS-SPECIFIC ALIASES
