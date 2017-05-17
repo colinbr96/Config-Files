@@ -27,8 +27,8 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 
 alias l='ls'
 alias la="ls -a"
-alias ll="ls -lh"
-alias lla='ls -lah'
+alias ll='ls -lh --time-style=+"%b %d %H:%M:%S"'
+alias lla='ll -a'
 
 alias rm="rm -i"
 alias cls="clear"
@@ -39,7 +39,7 @@ alias psg="ps aux | grep"
 alias sizeof="du -sh"
 alias sha256="shasum -a 256"
 alias f="find . -name"
-alias tree="tree -AC"
+alias tree="tree -C"
 
 
 # MACOS-SPECIFIC ALIASES
