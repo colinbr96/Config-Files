@@ -4,6 +4,8 @@
 find_in_folder() { grep --exclude=*.pyc -rnw "$1" -e "$2"; }
 # fuzzy(filename): fuzzy filename search in current dir
 fuzzy() { find . -name *"$1"*; }
+# mkcdir(directory): mkdir and then cd
+mkcdir() { mkdir -p -- "$1"; cd -P -- "$1"; }
 
 
 # COLORS
@@ -17,7 +19,7 @@ GREEN="\[${C}32m\]"
 YELLOW="\[${C}33m\]"
 RED="\[${C}31m\]"
 
-export PS1="\\[${CYAN}\u${WHITE}@${GREEN}\h${WHITE}:${YELLOW}\W${WHITE}\$ ${END}" # normal
+export PS1="${CYAN}\u${WHITE}@${GREEN}\h${WHITE}:${YELLOW}\W${WHITE}\$ ${END}" # normal
 # export PS1="\\[${RED}\u${WHITE}@${RED}\h${WHITE}:${RED}\W${WHITE}\$ ${END}" # root
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
