@@ -31,6 +31,8 @@ alias ll="ls -lh"
 alias lla='ls -lah'
 
 alias rm="rm -i"
+alias grep="grep --color -E"
+
 alias cls="clear"
 alias fdiff="diff -rq"
 alias fif="find_in_folder"
