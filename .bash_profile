@@ -1,7 +1,7 @@
 # FUNCTIONS
 
 # find_in_folder(directory, str): intra-file text search
-find_in_folder() { grep --exclude=*.pyc -rnw "$1" -e "$2"; }
+find_in_folder() { grep --color --extended-regexp --exclude=*.pyc -rnw "$1" -e "$2"; }
 # fuzzy(filename): fuzzy filename search in current dir
 fuzzy() { find . -name *"$1"*; }
 # mkcdir(directory): mkdir and then cd
@@ -33,7 +33,7 @@ alias ll='ls -lh --time-style=+"%b %d %H:%M:%S"'
 alias lla='ll -a'
 
 alias rm="rm -i"
-alias grep="grep --color -E"
+alias grep="grep --color --extended-regexp"
 
 alias cls="clear"
 alias fdiff="diff -rq"
