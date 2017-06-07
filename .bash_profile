@@ -1,9 +1,9 @@
 # FUNCTIONS
 
 # find_in_folder(directory, str): intra-file text search
-find_in_folder() { grep --color --extended-regexp --exclude=*.pyc -rnw "$1" -e "$2"; }
-# fuzzy(filename): fuzzy filename search in current dir
-fuzzy() { find . -name *"$1"*; }
+find_in_folder() { grep --color --ignore-case --recursive --line-number "$1" -e "$2"; }
+# fuzzy(directory, filename): fuzzy filename search
+fuzzy() { find "$1" -iname \*$2\*; }
 # mkcdir(directory): mkdir and then cd
 mkcdir() { mkdir -p -- "$1"; cd -P -- "$1"; }
 
@@ -20,7 +20,7 @@ YELLOW="\[${C}33m\]"
 RED="\[${C}31m\]"
 
 export PS1="${CYAN}\u${WHITE}@${GREEN}\h${WHITE}:${YELLOW}\W${WHITE}\$ ${END}" # normal
-# export PS1="\\[${RED}\u${WHITE}@${RED}\h${WHITE}:${RED}\W${WHITE}\$ ${END}" # root
+# export PS1="${RED}\u${WHITE}@${RED}\h${WHITE}:${RED}\W${WHITE}\$ ${END}" # root
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
@@ -33,7 +33,7 @@ alias ll='ls -lh --time-style=+"%b %d %H:%M:%S"'
 alias lla='ll -a'
 
 alias rm="rm -i"
-alias grep="grep --color --extended-regexp"
+alias grep="grep --color"
 
 alias cls="clear"
 alias fdiff="diff -rq"
@@ -42,8 +42,9 @@ alias gdiff='git diff --no-index'
 alias psg="ps aux | grep"
 alias sizeof="du -sh"
 alias sha256="shasum -a 256"
-alias f="find . -name"
+alias f="find . -iname"
 alias tree="tree -C"
+alias g="git"
 
 
 # MACOS-SPECIFIC ALIASES
