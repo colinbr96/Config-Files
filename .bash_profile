@@ -25,6 +25,12 @@ export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
 
+# Auto-Complete Behavior
+
+bind "set completion-ignore-case on"
+bind "set show-all-if-ambiguous on"
+
+
 # ALIASES
 
 alias ls='ls --color'
@@ -48,7 +54,10 @@ alias tree="tree -C"
 alias g="git"
 
 
-# MACOS-SPECIFIC ALIASES
+# MACOS
 
 alias showHiddenFiles="defaults write com.apple.finder AppleShowAllFiles YES; killall Finder"
 alias hideHiddenFiles="defaults write com.apple.finder AppleShowAllFiles NO; killall Finder"
+
+# vol(float): set system volume to the given value
+vol() { osascript -e "set Volume ${1}"; }
