@@ -35,6 +35,7 @@ bind "set show-all-if-ambiguous on"
 
 # ALIASES
 
+alias auth="ssh-add ~/.ssh/id_rsa"
 alias cls="clear"
 alias f="find . -iname"
 alias fdiff="diff -rq"
@@ -58,7 +59,8 @@ alias tree="tree -C"
 # alias showhidden="defaults write com.apple.finder AppleShowAllFiles YES; killall Finder"
 # alias hidehidden="defaults write com.apple.finder AppleShowAllFiles NO; killall Finder"
 # alias hide="chflags hidden"
-# alias unhie="chflags nohidden"
+# alias unhide="chflags nohidden"
+# alias sleeplog="pmset -g log"
 
 # vol(float): set system volume to the given value
 # vol() { osascript -e "set Volume ${1}"; }
