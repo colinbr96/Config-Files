@@ -1,0 +1,29 @@
+{
+	"always_show_minimap_viewport": true,
+	"color_scheme": "Packages/Colorsublime - Themes/Dark-Dracula.tmTheme",
+	"draw_minimap_border": true,
+	"enable_tab_scrolling": false,
+	"fade_fold_buttons": false,
+	"find_selected_text": true,
+	"font_face": "Consolas",
+	"font_size": 15,
+	"hot_exit": false,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
+	],
+	"open_files_in_new_window": false,
+	"scroll_past_end": true,
+	"show_full_path": true,
+	"smart_indent": false,
+	"tab_size": 4,
+	"theme": "Soda Dark 3.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
+	"update_check": false
+}
