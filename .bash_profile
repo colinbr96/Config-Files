@@ -19,10 +19,11 @@ GREEN="\[${C}32m\]"
 YELLOW="\[${C}33m\]"
 RED="\[${C}31m\]"
 
-# Normal PS1:
-export PS1="${CYAN}\u${WHITE}@${GREEN}\h${WHITE}:${YELLOW}\W${WHITE}\$ ${END}"
-# Root PS1:
-# export PS1="${RED}\u${WHITE}@${RED}\h${WHITE}:${RED}\W${WHITE}\$ ${END}"
+# SHELL PROMPT
+
+_git_branch() { git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'; }
+
+export PS1="${CYAN}\u@\h${WHITE}:${GREEN}\W${YELLOW}\$(_git_branch)${WHITE}\$ ${END}"
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
