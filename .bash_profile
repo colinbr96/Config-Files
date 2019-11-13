@@ -7,6 +7,19 @@ fuzzy() { find "$1" -iname \*$2\*; }
 # mkcdir(directory): mkdir and then cd
 mkcdir() { mkdir -p -- "$1"; cd -P -- "$1"; }
 
+# git-rename-branch(name): renames a git branch locally and remotely
+git-rename-branch() {
+    if ! git rev-parse --git-dir > /dev/null; then
+        return 1
+    fi
+    oldName=$(git rev-parse --abbrev-ref HEAD)
+    newName="$1"
+
+    git branch -m "$oldName" "$newName"
+    git push origin :"$oldName" "$newName"
+    git push origin -u "$newName"
+}
+
 
 # COLORS
 
