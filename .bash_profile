@@ -1,11 +1,19 @@
 # FUNCTIONS
 
 # fif(directory, str): "Find in Folder" intra-file text search
-fif() { grep --color --ignore-case --recursive --line-number "$1" -e "$2"; }
+fif() {
+    grep --color --ignore-case --recursive --line-number "$1" -e "$2";
+}
+
 # fuzzy(directory, filename): fuzzy filename search
-fuzzy() { find "$1" -iname \*$2\*; }
+fuzzy() {
+    find "$1" -iname \*$2\*;
+}
+
 # mkcdir(directory): mkdir and then cd
-mkcdir() { mkdir -p -- "$1"; cd -P -- "$1"; }
+mkcdir() {
+    mkdir -p -- "$1"; cd -P -- "$1";
+}
 
 # git-rename-branch(name): renames a git branch locally and remotely
 git-rename-branch() {
@@ -34,7 +42,9 @@ RED="\[${C}31m\]"
 
 # BASH PROMPT
 
-_git_branch() { git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'; }
+_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
 
 export PS1="${CYAN}\u@\h${WHITE}:${GREEN}\W${YELLOW}\$(_git_branch)${WHITE}\$ ${END}"
 export CLICOLOR=1
