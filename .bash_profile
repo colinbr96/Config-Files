@@ -19,7 +19,7 @@ GREEN="\[${C}32m\]"
 YELLOW="\[${C}33m\]"
 RED="\[${C}31m\]"
 
-# SHELL PROMPT
+# BASH PROMPT
 
 _git_branch() { git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'; }
 
