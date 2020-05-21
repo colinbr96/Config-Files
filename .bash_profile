@@ -7,7 +7,7 @@ fif() {
 
 # fuzzy(directory, filename): fuzzy filename search
 fuzzy() {
-    find "$1" -iname \*$2\*;
+    find "$1" -iname \*"$2"\*;
 }
 
 # mkcdir(directory): mkdir and then cd
