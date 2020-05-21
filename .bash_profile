@@ -46,7 +46,7 @@ _git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
-export PS1="${CYAN}\u@\h${WHITE}:${GREEN}\W${YELLOW}\$(_git_branch)${WHITE}\$ ${END}"
+export PS1="${CYAN}\u@\h${WHITE}:${GREEN}\W${YELLOW}$(_git_branch)${WHITE}\n\$ ${END}"
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
