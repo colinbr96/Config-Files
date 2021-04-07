@@ -1,0 +1,89 @@
+{
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "breadcrumbs.symbolPath": "off",
+    "cSpell.spellCheckDelayMs": 500,
+    "editor.fontFamily": "Consolas, monospace",
+    "editor.formatOnSave": true,
+    "editor.minimap.enabled": false,
+    "editor.minimap.showSlider": "always",
+    "editor.rulers": [
+        120
+    ],
+    "explorer.confirmDelete": false,
+    "files.trimTrailingWhitespace": true,
+    "macros": {
+        "createArrowFunction": [
+            {
+                "args": {
+                    "text": "("
+                },
+                "command": "type"
+            },
+            "cursorRight",
+            {
+                "args": {
+                    "text": " => {"
+                },
+                "command": "type"
+            }
+        ]
+    },
+    "python.formatting.autopep8Args": [
+        "--max-line-length=120"
+    ],
+    "selectline.alignment": "right",
+    "selectline.statusbarPriority": 101,
+    "todohighlight.keywords": [
+        {
+            "backgroundColor": "#6e6124",
+            "color": "yellow",
+            "isWholeLine": false,
+            "text": "TODO"
+        },
+        {
+            "backgroundColor": "#681212",
+            "color": "#ff4747",
+            "text": "FIXME"
+        },
+        {
+            "backgroundColor": "#681212",
+            "color": "#ff4747",
+            "text": "FIX ME"
+        },
+        {
+            "backgroundColor": "black",
+            "color": "green",
+            "text": "DEBUGGING"
+        },
+        {
+            "backgroundColor": "black",
+            "color": "green",
+            "text": "DEBUG"
+        }
+    ],
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "workbench.colorTheme": "Default Dark+",
+    "workbench.editorAssociations": [
+        {
+            "filenamePattern": "*.ipynb",
+            "viewType": "jupyter.notebook.ipynb"
+        }
+    ],
+    "workbench.list.horizontalScrolling": true,
+    "workbench.tree.indent": 20,
+    "workbench.tree.renderIndentGuides": "always"
+}
