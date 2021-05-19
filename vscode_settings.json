@@ -25,20 +25,23 @@
     "explorer.confirmDelete": false,
     "files.trimTrailingWhitespace": true,
     "macros": {
-        "createArrowFunction": [
+        "createAsyncArrowFunction": [
             {
                 "args": {
-                    "text": "("
+                    "text": "async () => {}"
                 },
                 "command": "type"
             },
-            "cursorRight",
+            "cursorLeft"
+        ],
+        "createArrowFunction": [
             {
                 "args": {
-                    "text": " => {"
+                    "text": "() => {}"
                 },
                 "command": "type"
-            }
+            },
+            "cursorLeft"
         ]
     },
     "python.formatting.autopep8Args": [
