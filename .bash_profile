@@ -28,6 +28,15 @@ git-rename-branch() {
     git push origin -u "$newName"
 }
 
+# git-sync-master(): pull master & merge into current branch
+git-sync-master() {
+    currBranch=$(git rev-parse --abbrev-ref HEAD)
+    git stash save
+    git checkout master
+    git pull
+    git checkout "$currBranch"
+    git merge master
+}
 
 # COLORS
 
