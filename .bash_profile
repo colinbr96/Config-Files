@@ -51,11 +51,12 @@ RED="\[${C}31m\]"
 
 # BASH PROMPT
 
-_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+set_bash_prompt() {
+    PS1="${CYAN}\u@\h${WHITE}:${GREEN}\w${YELLOW}$(__git_ps1)${WHITE}\n\$ ${END}"
 }
 
-export PS1="${CYAN}\u@\h${WHITE}:${GREEN}\w${YELLOW}$(_git_branch)${WHITE}\n\$ ${END}"
+PROMPT_COMMAND=set_bash_prompt
+
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
