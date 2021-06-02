@@ -52,7 +52,12 @@ RED="\[${C}31m\]"
 # BASH PROMPT
 
 set_bash_prompt() {
-    PS1="${CYAN}\u@\h${WHITE}:${GREEN}\w${YELLOW}$(__git_ps1)${WHITE}\n\$ ${END}"
+    LAST_EXIT=$?
+    STATUS=""
+    if [[ ${LAST_EXIT} -ne 0 ]]; then
+        STATUS="${RED}${LAST_EXIT}"
+    fi
+    PS1="${CYAN}\u@\h${WHITE}:${GREEN}\w${YELLOW}$(__git_ps1) ${STATUS}${WHITE}\n\$ ${END}"
 }
 
 PROMPT_COMMAND=set_bash_prompt
