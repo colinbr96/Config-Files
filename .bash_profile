@@ -38,6 +38,15 @@ git-sync-master() {
     git merge master
 }
 
+# infinite-retry(command): Try to run $command forever until it succeeds
+infinite-retry() {
+    while ! "$@";
+    do
+        echo Sleeping... $(date)
+        sleep 15
+    done
+}
+
 # COLORS
 
 C="\033[" # color escape sequence
