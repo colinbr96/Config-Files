@@ -82,6 +82,7 @@
     ],
     "typescript.updateImportsOnFileMove.enabled": "always",
     "workbench.colorTheme": "Default Dark+",
+    "workbench.editor.wrapTabs": true,
     "workbench.editorAssociations": [
         {
             "filenamePattern": "*.ipynb",
