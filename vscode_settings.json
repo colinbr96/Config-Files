@@ -15,18 +15,20 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "cSpell.spellCheckDelayMs": 500,
+    "cSpell.allowCompoundWords": true,
     "editor.codeActionsOnSave": {
         "source.organizeImports": true
     },
-    "editor.fontFamily": "Consolas, monospace",
+    "editor.fontFamily": "Consolas ligaturized v2, Consolas, monospace",
+    "editor.fontLigatures": true,
     "editor.formatOnSave": true,
     "editor.minimap.enabled": false,
     "editor.minimap.showSlider": "always",
-    "editor.rulers": [
-        120
-    ],
+    "editor.rulers": [120],
     "explorer.confirmDelete": false,
+    "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
+    "gitlens.blame.format": "${author|10} ${message|40?} ${agoOrDate|14-}",
     "macros": {
         "createAsyncArrowFunction": [
             {
@@ -47,9 +49,7 @@
             "cursorLeft"
         ]
     },
-    "python.formatting.autopep8Args": [
-        "--max-line-length=120"
-    ],
+    "python.formatting.autopep8Args": ["--max-line-length=120"],
     "selectline.alignment": "right",
     "selectline.statusbarPriority": 101,
     "todohighlight.keywords": [
@@ -80,7 +80,9 @@
             "text": "DEBUG"
         }
     ],
+    "typescript.inlayHints.parameterNames.enabled": "literals",
     "typescript.updateImportsOnFileMove.enabled": "always",
+    "window.title": "${dirty}${rootName}${separator}${activeEditorShort}${separator}${appName}",
     "workbench.colorTheme": "Default Dark+",
     "workbench.editor.wrapTabs": true,
     "workbench.editorAssociations": [
@@ -90,6 +92,7 @@
         }
     ],
     "workbench.list.horizontalScrolling": true,
+    "workbench.quickOpen.preserveInput": true,
     "workbench.tree.indent": 20,
     "workbench.tree.renderIndentGuides": "always"
 }
