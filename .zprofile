@@ -1,0 +1,18 @@
+# ALIASES
+
+alias cls="clear"
+alias f="find . -iname"
+alias fdiff="diff -rq"
+alias g="git"
+alias gdiff="git diff --no-index"
+alias grep="grep --color"
+alias ls="ls --color"
+alias l="ls"
+alias la="ls -a"
+alias ll="ls -lh"
+alias lla="ll -a"
+alias psg="ps aux | grep"
+alias rm="rm -i"
+alias sha256="shasum -a 256"
+alias sizeof="du -sh"
+alias tree="tree -C"

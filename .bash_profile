@@ -83,7 +83,6 @@ bind "set show-all-if-ambiguous on"
 
 # ALIASES
 
-alias auth="ssh-add ~/.ssh/id_rsa"
 alias cls="clear"
 alias f="find . -iname"
 alias fdiff="diff -rq"
