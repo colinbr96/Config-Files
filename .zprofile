@@ -65,3 +65,7 @@ infinite-retry() {
         sleep 15
     done
 }
+
+# MAC OS
+
+# export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
