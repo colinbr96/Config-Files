@@ -13,4 +13,4 @@
     squash2 = !git reset --soft "HEAD^" && git commit --amend
     root = rev-parse --show-toplevel
 [fetch]
-    prune=always
+    prune=true
