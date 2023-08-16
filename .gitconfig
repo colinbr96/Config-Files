@@ -1,14 +1,16 @@
 [alias]
-a = add
-b = branch
-c = commit
-co = checkout
-d = diff
-f = fetch
-m = merge
-s = status
-pl = pull
-ps = push
-lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
-squash2 = !git reset --soft "HEAD^" && git commit --amend
-root = rev-parse --show-toplevel
+    a = add
+    b = branch
+    c = commit
+    co = checkout
+    d = diff
+    f = fetch
+    m = merge
+    s = status
+    pl = pull
+    ps = push
+    lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+    squash2 = !git reset --soft "HEAD^" && git commit --amend
+    root = rev-parse --show-toplevel
+[fetch]
+    prune=always
