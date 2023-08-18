@@ -47,6 +47,28 @@ git-rename-branch() {
     git push origin -u "$newName"
 }
 
+# git-delete-branch(name): deletes a git branch locally and remotely
+git_delete_branch() {
+    branch_name=$1
+    echo -n "Delete local? [y/N]: "
+    read delete_local
+
+    if [[ $delete_local == "y" ]]; then
+        git branch -d $branch_name
+    fi
+
+    echo -n "Delete remote? [y/N]: "
+    read  delete_remote
+
+    if [[ $delete_remote == "y" ]]; then
+        echo -n "Remote? [origin]: "
+        read remote
+        remote="${remote:=origin}"
+        git push $remote --delete $branch_name
+    fi
+}
+
+
 # git-sync-master(): pull master & merge into current branch
 git-sync-master() {
     currBranch=$(git rev-parse --abbrev-ref HEAD)
