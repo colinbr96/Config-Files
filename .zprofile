@@ -11,7 +11,6 @@ alias l="ls"
 alias la="ls -a"
 alias ll="ls -lh"
 alias lla="ll -a"
-alias psg="ps aux | grep"
 alias rm="rm -i"
 alias sha256="shasum -a 256"
 alias sizeof="du -sh"
@@ -32,6 +31,12 @@ fuzzy() {
 # mkcdir(directory): mkdir and then cd
 mkcdir() {
     mkdir -p -- "$1"; cd -P -- "$1";
+}
+
+# psg(str): Grep running processes, but nicer
+psg() {
+    ps aux | head -n 1; # Print headers
+    ps aux | grep -v grep | grep "$1"; # Exclude grep itself
 }
 
 # git-rename-branch(name): renames a git branch locally and remotely
