@@ -4,7 +4,7 @@
 	"enable_tab_scrolling": false,
 	"fade_fold_buttons": false,
 	"find_selected_text": true,
-	"font_face": "Consolas",
+	"font_face": "Inconsolata, Consolas",
 	"font_size": 13,
 	"indent_guide_options":
 	[
@@ -15,8 +15,15 @@
 	"scroll_past_end": true,
 	"show_full_path": true,
 	"smart_indent": false,
-	"tab_size": 4,
-	"theme": "Default Dark.sublime-theme",
+	"tab_size": 2,
 	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": true
+	"trim_trailing_white_space_on_save": true,
+	"theme": "Adaptive.sublime-theme",
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"color_scheme": "auto",
+	"dark_color_scheme": "GitHub Dark.sublime-color-scheme",
+	"light_color_scheme": "GitHub Light.sublime-color-scheme",
 }
