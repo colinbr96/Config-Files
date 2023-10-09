@@ -93,6 +93,11 @@ infinite-retry() {
     done
 }
 
+# dockersh(container): Open a bash shell on a specified container
+dockersh() {
+    docker exec -it $1 /bin/bash
+}
+
 # MAC OS
 
 # export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
