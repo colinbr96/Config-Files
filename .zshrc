@@ -11,7 +11,7 @@ $ '
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
-# Fix key bindings
+# MacOS key bindings
 bindkey "^[[H" beginning-of-line # Home
 bindkey "^[[F" end-of-line # End
 bindkey "^[^[[D" backward-word # Alt + Left Arrow

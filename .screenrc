@@ -1,4 +1,4 @@
-shell -bash
+shell -zsh
 hardstatus on
 hardstatus alwayslastline
 hardstatus string "%w"

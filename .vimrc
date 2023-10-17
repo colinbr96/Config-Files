@@ -1,8 +1,8 @@
 " THEME
 
-set background=dark
+set termguicolors
 syntax on
-colorscheme elflord
+colorscheme default
 
 
 " PREFERENCES
