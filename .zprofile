@@ -89,7 +89,7 @@ git-rstatus() {
     for d in ./*/; do
         echo "$d"
         cd "$d"
-        git status --short
+        git status --short --branch
         cd ..
         echo ""
     done
