@@ -84,6 +84,13 @@ git-sync-master() {
     git merge master
 }
 
+# git-rstatus: calls git status for all directories in the current directory
+git-rstatus() {
+    for d in ./*/; do
+        echo "$d"; cd "$d"; git status --short; cd ..;
+    done
+}
+
 # infinite-retry(command): Try to run $command forever until it succeeds
 infinite-retry() {
     while ! "$@";
