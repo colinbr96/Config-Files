@@ -87,7 +87,11 @@ git-sync-master() {
 # git-rstatus: calls git status for all directories in the current directory
 git-rstatus() {
     for d in ./*/; do
-        echo "$d"; cd "$d"; git status --short; cd ..;
+        echo "$d"
+        cd "$d"
+        git status --short
+        cd ..
+        echo ""
     done
 }
 
