@@ -3,6 +3,7 @@
     b = branch
     c = commit
     co = checkout
+    cp = cherry-pick
     d = diff
     f = fetch
     m = merge
