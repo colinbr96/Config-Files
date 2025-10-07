@@ -16,9 +16,15 @@ $ '
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
-# MacOS key bindings
-bindkey "^[[H" beginning-of-line # Home
-bindkey "^[[F" end-of-line # End
-bindkey "^[^[[D" backward-word # Alt + Left Arrow
-bindkey "^[^[[C" forward-word # Alt + Right Arrow
+# MacOS:
 
+# bindkey "^[[H" beginning-of-line # Home
+# bindkey "^[[F" end-of-line # End
+# bindkey "^[^[[D" backward-word # Alt + Left Arrow
+# bindkey "^[^[[C" forward-word # Alt + Right Arrow
+
+# Sublime text (subl)
+# export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
+
+# VSCode (code)
+# export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"

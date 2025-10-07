@@ -15,7 +15,14 @@ alias lla="ll -a"
 alias rm="rm -i"
 alias sha256="shasum -a 256"
 alias sizeof="du -sh"
-alias tree="tree -C"
+alias less="less --ignore-case"
+alias timestamp="date +%s"
+
+
+# MAC OS
+
+# alias bell="afplay /System/Library/Sounds/Funk.aiff"
+
 
 # FUNCTIONS
 
@@ -38,6 +45,11 @@ mkcdir() {
 psg() {
     ps aux | head -n 1; # Print headers
     ps aux | grep -v grep | grep "$1"; # Exclude grep itself
+}
+
+# vsrc(file): Edit the file in Vim, then source it (useful for updating cconfig files)
+vsrc() {
+    vim $1; source $1;
 }
 
 # git-rename-branch(name): renames a git branch locally and remotely
@@ -74,17 +86,6 @@ git_delete_branch() {
     fi
 }
 
-
-# git-sync-master(): pull master & merge into current branch
-git-sync-master() {
-    currBranch=$(git rev-parse --abbrev-ref HEAD)
-    git stash save
-    git checkout master
-    git pull
-    git checkout "$currBranch"
-    git merge master
-}
-
 # git-rstatus: calls git status for all directories in the current directory
 git-rstatus() {
     for d in ./*/; do
@@ -105,11 +106,16 @@ infinite-retry() {
     done
 }
 
+# json-pretty(file): Pretty the given JSON file using jq
+json-pretty() {
+    if [ ! -f "$1" ]; then
+        echo "Pass a filename as argument."
+    else
+        jq '.' $1 | sponge $1
+    fi
+}
+
 # dockersh(container): Open a bash shell on a specified container
 dockersh() {
     docker exec -it $1 /bin/bash
 }
-
-# MAC OS
-
-# export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
