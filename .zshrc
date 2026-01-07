@@ -9,6 +9,10 @@ precmd() {
   GIT_BRANCH=$(_git_branch)
 }
 
+chpwd() {
+  ls
+}
+
 PROMPT='%F{cyan}%n%F{white}@%F{cyan}%m%F{white}:%F{green}%1d%F{yellow}${GIT_BRANCH} %F{magenta}[%*] %(?.%F{white}.%F{red})%?%f
 $ '
 
