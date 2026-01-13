@@ -10,7 +10,9 @@ precmd() {
 }
 
 chpwd() {
-  ls
+  if (( $(ls -A | wc -l) < 20 )); then
+    ls
+  fi
 }
 
 PROMPT='%F{cyan}%n%F{white}@%F{cyan}%m%F{white}:%F{green}%1d%F{yellow}${GIT_BRANCH} %F{magenta}[%*] %(?.%F{white}.%F{red})%?%f
