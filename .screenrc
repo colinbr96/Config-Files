@@ -2,3 +2,4 @@ shell -zsh
 hardstatus on
 hardstatus alwayslastline
 hardstatus string "%w"
+defscrollback 100000

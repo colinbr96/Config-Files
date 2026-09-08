@@ -9,6 +9,13 @@ precmd() {
   GIT_BRANCH=$(_git_branch)
 }
 
+chpwd() {
+  # Automatically ls after cd, if < 20 files
+  if (( $(ls -A | wc -l) < 20 )); then
+    ls
+  fi
+}
+
 PROMPT='%F{cyan}%n%F{white}@%F{cyan}%m%F{white}:%F{green}%1d%F{yellow}${GIT_BRANCH} %F{magenta}[%*] %(?.%F{white}.%F{red})%?%f
 $ '
 
@@ -28,24 +35,29 @@ alias grep="grep --color"
 alias ls="ls --color"
 alias l="ls"
 alias la="ls -a"
-alias ll="ls -lh"
+alias ll="ls -lht"
 alias lla="ll -a"
 alias rm="rm -i"
+alias cp="cp -i"
+alias mv="mv -i"
 alias sha256="shasum -a 256"
 alias sizeof="du -sh"
 alias less="less --ignore-case"
 alias timestamp="date +%s"
+alias sz="source ~/.zshrc"
 
-# MacOS:
+# MACOS
 
 # alias bell="afplay /System/Library/Sounds/Funk.aiff"
-# bindkey "^[[H" beginning-of-line # Home
-# bindkey "^[[F" end-of-line # End
-# bindkey "^[^[[D" backward-word # Alt + Left Arrow
-# bindkey "^[^[[C" forward-word # Alt + Right Arrow
+
+# Sublime text (subl)
+# export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
+
+# VSCode (code)
+# export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 
-# FUNCTIONS
+# HELPER FUNCTIONS
 
 # fif(directory, str): "Find in Folder" intra-file text search
 fif() {
@@ -68,9 +80,9 @@ psg() {
     ps aux | grep -v grep | grep "$1"; # Exclude grep itself
 }
 
-# vsrc(file): Edit the file in Vim, then source it (useful for updating cconfig files)
-vsrc() {
-    vim $1; source $1;
+# esrc(file): Enable auto-export, then source a file
+esrc() {
+    set -a; source $1; set +a;
 }
 
 # git-rename-branch(name): renames a git branch locally and remotely
@@ -118,6 +130,31 @@ git-rstatus() {
     done
 }
 
+# git-refresh-branch(upstream): rebases current branch onto a required upstream branch
+git-refresh-branch() {
+    if [[ -z "$1" ]]; then
+        echo "Error: Upstream branch is required."
+        echo "Usage: git-refresh-branch <upstream-branch>"
+        return 1
+    fi
+
+    local upstream_branch="$1"
+    local current_branch=$(git rev-parse --abbrev-ref HEAD)
+
+    # Prevent rebasing the branch into itself
+    if [[ "$current_branch" == "$upstream_branch" ]]; then
+        echo "Error: You are already on $upstream_branch."
+        return 1
+    fi
+
+    echo "Pulling $upstream_branch and Rebasing $current_branch..."
+
+    git checkout "$upstream_branch" && \
+    git pull origin "$upstream_branch" && \
+    git checkout "$current_branch" && \
+    git rebase "$upstream_branch"
+}
+
 # infinite-retry(command): Try to run $command forever until it succeeds
 infinite-retry() {
     while ! "$@";
@@ -140,10 +177,3 @@ json-pretty() {
 dockersh() {
     docker exec -it $1 /bin/bash
 }
-
-
-# Sublime text (subl)
-# export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
-
-# VSCode (code)
-# export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
