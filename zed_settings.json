@@ -9,8 +9,7 @@
 {
   "agent": {
     "dock": "right",
-    "favorite_models": [],
-    "model_parameters": []
+    "favorite_models": []
   },
   "base_keymap": "VSCode",
   "buffer_font_family": "Inconsolata",
@@ -21,17 +20,10 @@
     "dock": "left"
   },
   "confirm_quit": true,
-  "cursor_blink": true,
   "disable_ai": true,
-  "ensure_final_newline_on_save": true,
   "file_types": {
     "jinja": ["*.jinja"],
     "perl": ["Config"]
-  },
-  "git": {
-    "inline_blame": {
-      "enabled": true
-    }
   },
   "git_panel": {
     "dock": "left"
@@ -41,18 +33,12 @@
     "light": "Catppuccin Latte",
     "mode": "dark"
   },
-  "minimap": {
-    "show": "never",
-    "thumb": "always"
-  },
   "outline_panel": {
     "dock": "left"
   },
   "project_panel": {
     "dock": "left"
   },
-  "proxy": "",
-  "show_wrap_guides": true,
   "tabs": {
     "file_icons": true
   },
