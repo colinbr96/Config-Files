@@ -37,8 +37,8 @@
     "dock": "left"
   },
   "icon_theme": {
-    "dark": "Zed (Default)",
-    "light": "Zed (Default)",
+    "dark": "Catppuccin Mocha",
+    "light": "Catppuccin Latte",
     "mode": "dark"
   },
   "minimap": {
@@ -53,6 +53,9 @@
   },
   "proxy": "",
   "show_wrap_guides": true,
+  "tabs": {
+    "file_icons": true
+  },
   "telemetry": {
     "diagnostics": false,
     "metrics": false
@@ -66,9 +69,17 @@
     }
   },
   "theme": {
-    "dark": "Catppuccin Frappé",
+    "dark": "Catppuccin Macchiato",
     "light": "One Light",
     "mode": "dark"
+  },
+  "theme_overrides": {
+    "Catppuccin Macchiato": {
+      "terminal.background": "#1e2030"
+    },
+    "One Light": {
+      "terminal.background": "#ebebec"
+    }
   },
   "title_bar": {
     "show_sign_in": false
